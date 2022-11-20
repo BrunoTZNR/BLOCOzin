@@ -1,0 +1,12 @@
+@use './../abstract' as *;
+
+.footer{
+  @include container;
+  @include flex-center;
+  color: var(--text-1-l);
+
+  span{
+    color: var(--secon);
+    font-weight: 600;
+  }
+}

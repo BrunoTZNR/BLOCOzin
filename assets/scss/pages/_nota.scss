@@ -1,0 +1,88 @@
+@use './../abstract' as *;
+
+.nota{
+  @include container;
+  // width: 70%;
+  display: flex;
+  flex-flow: nowrap column;
+  row-gap: 2rem;
+  padding: 1.5rem 8rem;
+  position: relative;
+
+  @include mobile {
+    padding: 1.5rem 1rem;
+  }
+
+  @include tablet {
+    padding: 1.5rem 2rem;
+  }
+
+  &-dados{
+    display: flex;
+    flex-flow: nowrap column;
+
+    .input-container{
+      display: flex;
+      flex-flow: nowrap column-reverse;
+      justify-content: center;
+      margin-bottom: 1rem;
+
+      input, textarea{
+        @include reset-input;
+        background-color: var(--secon);
+        color: var(--text-2-l);
+
+        &:focus{
+          background-color: var(--third);
+          color: var(--text-1-l);
+
+          &~ label{
+            color: var(--third);
+          }
+        }
+
+        &:disabled{
+          cursor: text;
+        }
+      }
+
+      input{
+        height: 30px;
+        text-align: center;
+      }
+
+      textarea{
+        height: 170px;
+        resize: none;
+        text-align: justify;
+        padding: .5rem .75rem;
+        
+        &::-webkit-scrollbar{
+          width: 8px;
+          background-color: var(--light);
+
+          &-track{
+            border-radius:0;
+            background-color: var(--light);
+          }
+
+          &-thumb{
+            border-radius: 0;
+          background-color: var(--secon);
+          }
+        }
+      }
+    }
+  }
+
+  &-acoes{
+    @include flex-center;
+    column-gap: 2rem;
+
+    a, button{
+      @include flex-center;
+      @include reset-input;
+      @include button-style;
+    }
+  }
+}

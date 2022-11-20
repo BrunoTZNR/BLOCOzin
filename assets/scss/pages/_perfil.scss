@@ -1,0 +1,66 @@
+@use './../abstract' as *;
+
+.perfil{
+  @include container;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  row-gap: 2rem;
+  padding: 1.5rem 1rem;
+  position: relative;
+
+  &-dados{
+    display: flex;
+    flex-direction: column;
+    row-gap: .9rem;
+
+    article{
+      height: 27px;
+      display: flex;
+      align-items: center;
+      column-gap: .9rem;
+
+      h3{
+        color: var(--secon);
+
+        &.error{
+          color: var(--third);
+        }
+      }
+
+      input{
+        height: 100%;
+        @include reset-input;
+        padding-left: .4rem;
+        color: var(--text-2-l);
+        background-color: var(--secon);
+        transition: background-color .15s ease-in;
+
+        &:focus{
+          background-color: var(--third);
+        }
+
+        &.error{
+          color: var(--text-1-d);
+          background-color: var(--third);
+        }
+      }
+
+      span{
+        font-size: 1rem;
+        color: var(--third);
+      }
+    }
+  }
+
+  &-acoes{
+    @include flex-center;
+    column-gap: 2rem;
+
+    a, button{
+      @include flex-center;
+      @include reset-input;
+      @include button-style;
+    }
+  }
+}

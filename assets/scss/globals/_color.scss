@@ -1,0 +1,50 @@
+@use './../abstract' as *;
+
+:root{
+  --bg-dark   : #4b5253;
+  --dark-light: #d6d6d6;
+  --dark-prima: #78D0E3;
+  --dark-secon: #39A9DB;
+  --dark-third: #1C77C3;
+  --dark-dark : #0F426B;
+
+  --bg-light   : #ebebeb;
+  --light-light: #d8d2cb;
+  --light-prima: #f09642;
+  --light-secon: #E56234;
+  --light-third: #CC2B28;
+  --light-dark : #98211F;
+
+  --text-1-l   : #e4e4e4;
+  --text-2-l   : #ffffff;
+  --text-1-d   : #1d1d1d;
+  --text-2-d   : #0e0e0e;
+}
+
+@media (prefers-color-scheme: light) {
+  body{
+    --bg-color: var(--bg-light);
+    --light   : var(--light-light);
+    --prima   : var(--light-prima);
+    --secon   : var(--light-secon);
+    --third   : var(--light-third);
+    --dark    : var(--light-dark);
+    --text    : var(--text-1-d);
+  
+    @include background-img(var(--background-light));
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body{
+    --bg-color: var(--bg-dark);
+    --light   : var(--dark-light);
+    --prima   : var(--dark-prima);
+    --secon   : var(--dark-secon);
+    --third   : var(--dark-third);
+    --dark    : var(--dark-dark);
+    --text    : var(--text-1-l);
+  
+    @include background-img(var(--background-dark));
+  }
+}

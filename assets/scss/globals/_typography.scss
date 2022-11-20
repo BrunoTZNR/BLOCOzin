@@ -1,0 +1,87 @@
+@use './../abstract' as *;
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  &.title-user {
+    font-size: 2.5rem;
+    color: var(--text-2-l);
+    text-align: center;
+    text-transform: uppercase;
+
+    @include tablet{
+      margin-bottom: 1rem;
+    }
+  }
+
+  &.header-title{
+    color: var(--text-1-l);
+    margin: 0;
+  }
+}
+
+h3{
+  margin: 0;
+}
+
+h4{
+  // text-align: justify;
+  font-weight: 500;
+  line-height: 1rem;
+  
+  &.listagem-bloco-title{
+    margin-bottom: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--dark);
+  }
+}
+
+p{
+  margin: 0;
+  padding: 0;
+
+  &.perfil-dados-text{
+    color: var(--text);
+  }
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+  @include transition-button;
+}
+
+label {
+  &.label-user{
+    position: absolute;
+    left: 0;
+    bottom: 50%;
+    padding: 0 2px;
+    transform: translateY(50%);
+    transition: .2s ease-in;
+    pointer-events: none;
+
+    &.lerror{
+      color: var(--third);
+    }
+  }
+
+  &.label-nota{
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: .5rem;
+    color: var(--secon);
+  }
+}

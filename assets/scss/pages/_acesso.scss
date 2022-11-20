@@ -1,0 +1,120 @@
+@use './../abstract' as *;
+
+.form {
+  &-user {
+    height: 100%;
+    @include flex-center;
+    flex-direction: column;
+    row-gap: 1rem;
+    padding: 0 1rem;
+    background: var(--dark);
+
+    @include mobile{
+      row-gap: 2rem;
+    }
+
+    @include tablet{
+      row-gap: 1.75rem;
+    }
+
+    @include laptop{
+      row-gap: 1.5rem;
+    }
+
+    .input-container {
+      max-width: 350px;
+      width: 100%;
+      color: var(--text-1-l);
+      border-color: var(--text-1-l);
+      position: relative;
+
+      input {
+        width: 100%;
+        @include reset-input;
+        color: var(--text-1-l-2-l);
+        padding: 5px;
+        border-bottom: 2px solid var(--text-1-l);
+
+        &[type="date"] {
+          text-align: end;
+          transition: .3s ease-in;
+
+          &::-webkit-calendar-picker-indicator{
+            cursor: pointer;
+          }
+
+          &:focus{
+            text-align: start;
+          }
+        }
+
+        &:focus, &.input-user-ativo{
+          border-color: var(--secon);
+
+          &~label, &.label-user-ativo{
+            color: var(--secon);
+            font-size: .8rem;
+            transform: translateY(-75%);
+          }
+        }
+
+        &.ierror{
+          border-color: var(--third);
+        }
+      }
+
+      span {
+        font-size: .75rem;
+        color: var(--third);
+        position: absolute;
+        bottom: -47%;
+        right: 0;
+      }
+
+      &.error{
+        color: var(--secon);
+        border-color: var(--secon);
+      }
+    }
+
+    section {
+      max-width: 350px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1.5rem;
+
+      button{
+        @include transition-button;
+      }
+
+      .user-button {
+        // width: 120px;
+        height: 30px;
+        @include flex-center;
+        @include reset-input;
+        background: var(--secon);
+        color: var(--text-1-l);
+        cursor: pointer;
+        padding: 0 .8rem;
+        font-size: .75rem;
+        font-weight: 600;
+        letter-spacing: .5px;
+        text-transform: uppercase;
+
+        @include mobile{
+          font-size: 1rem;
+        }
+
+        &:hover {
+          background: var(--third);
+          box-shadow: 1px 1px 5px var(--text-1-d);
+        }
+
+        &:disabled{
+          background-color: red;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+@use './../abstract' as *;
+
+.alert{
+  width: 100%;
+  padding: 0 1rem;
+  position: absolute;
+  top: 13%;
+  opacity: 1;
+  transition: opacity .5s ease;
+
+  p{
+    max-width: 350px;
+    margin: 0 auto;
+    text-align: center;
+    padding: .4rem .6rem;
+    border-radius: 4px;
+    border: 2px solid var(--text-1-l);
+    color: var(--text-2-l);
+  }
+
+  &-listagem{
+    width: 245px;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    transition: right .75s ease-out;
+    background-color: var(--text-1-d);
+    z-index: 4;
+  
+    p{
+      text-align: start;
+      padding: 1rem .6rem;
+      border-left: 4px solid var(--text-1-l);
+      color: var(--text-2-l);
+      text-shadow: 0px 0px 2px var(--text-2-l);
+    }
+  }
+
+  &-nota, &-perfil{
+    max-width: 400px;
+    width: 100%;
+    position: absolute;
+    top: -5%;
+    right: 50%;
+    transform: translateX(50%);
+    opacity: 1;
+    transition: opacity .5s ease-out;
+    
+    p{
+      margin: 0 auto;
+      text-align: center;
+      padding: .4rem .6rem;
+      border-radius: 4px;
+      color: var(--text-2-l);
+      background-color: var(--prima);
+    }
+  }
+
+  &-perfil{
+    top: -50px;
+  }
+}
