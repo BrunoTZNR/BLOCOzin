@@ -1,7 +1,7 @@
 # **_BLOCOzin_**
 Projeto desenvolvido para o trabalho da disciplina Aplicações WEB - _Faculdade Projeção_.<br>
 
-**Ir para o site [BLOCOzin](https://blocozin.herokuapp.com/index.php).**
+**Ir para o site [BLOCOzin](#).** (atualmente está fora do ar para atualizações 17/01/2023)
 ### Sobre
 Esta aplicação web se propõe a um determinado usuário crie suas notas e as armazenem, com sua disponibilidade para alterar, excluir ou vizualiza-las a partir do mesmo usuário que a criou.
 
