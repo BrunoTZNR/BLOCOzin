@@ -24,10 +24,10 @@
       $conteudo = clean($_POST['conteudo']);
       $fk_user = clean($_SESSION['id_user']);
 
-      // $query = $conn->prepare("UPDATE tb_nota 
-      //                         SET titulo = ?, conteudo = ? 
-      //                         WHERE id_nota= ? AND fk_user = ?");
-      // $query->execute([$titulo, $conteudo, $_GET['id_nota'], $fk_user]);
+      $query = $conn->prepare("UPDATE tb_nota 
+                              SET titulo = ?, conteudo = ? 
+                              WHERE id_nota= ? AND fk_user = ?");
+      $query->execute([$titulo, $conteudo, $_GET['id_nota'], $fk_user]);
 
       header('Location: view_nota.php?id_nota='.$_GET['id_nota'].'&alert=update');
     }

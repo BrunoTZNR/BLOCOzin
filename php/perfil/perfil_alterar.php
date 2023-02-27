@@ -55,7 +55,6 @@ if (isset($_POST['alterar'])) {
   }
 }
 ?>
-
 <main class="relative">
   <form class="perfil" method="post">
     <div class="alert-perfil">

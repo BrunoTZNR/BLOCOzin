@@ -2,7 +2,8 @@
 if (!isset($_SESSION['id_user'])) {
   session_unset();
   session_destroy();
-  header('Location: ./../../index.php');
+  echo 'AQUI O BURRÃO';
+  // header('Location: ./../../index.php');
 }
 
 switch (TITLE) {
