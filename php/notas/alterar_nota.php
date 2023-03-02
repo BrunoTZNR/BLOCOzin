@@ -29,7 +29,9 @@
                               WHERE id_nota= ? AND fk_user = ?");
       $query->execute([$titulo, $conteudo, $_GET['id_nota'], $fk_user]);
 
-      header('Location: view_nota.php?id_nota='.$_GET['id_nota'].'&alert=update');
+      echo '<script>window.location.href="view_nota.php?id_nota='.$_GET['id_nota'].'&alert=update"</script>';
+
+      // header('Location: view_nota.php?id_nota='.$_GET['id_nota'].'&alert=update');
     }
   }
 ?>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-$modo = 'producao';
+$modo = 'teste';
 
 if ($modo == 'teste') {
     $host = 'localhost';
@@ -24,8 +24,7 @@ try {
 }
 
 // MÉTODO RESPONSÁVEL POR LIMPAR OS CAMPOS INPUT
-function clean($dado)
-{
+function clean($dado){
     $dado = trim($dado);
     $dado = stripslashes($dado);
     $dado = htmlspecialchars($dado);
@@ -33,8 +32,7 @@ function clean($dado)
 }
 
 // MÉTODO RESPONSÁVEL POR INFERIR A MENSAGEM DE ALERT NA PAGINA DE LOGIN
-function alertLogin($alert)
-{
+function alertLogin($alert){
     switch ($alert) {
         case 'sucess':
             return '<p>Usuário criado com sucesso!</p>';
@@ -55,8 +53,7 @@ function alertLogin($alert)
 }
 
 // MÉTODO RESPONSÁVEL POR INFERIR A MENSAGEM DE ALERT NA PAGINA DE LISTAGEM
-function alertListagem($alert)
-{
+function alertListagem($alert){
     switch ($alert) {
         case 'null':
             return '<p>Nenhuma nota encontrada!</p>';
@@ -73,8 +70,7 @@ function alertListagem($alert)
 }
 
 // MÉTODO RESPONSÁVEL POR INFERIR A MENSAGEM DE ALERT NA PAGINA DE VIEW
-function alertView($alert)
-{
+function alertView($alert){
     switch ($alert) {
         case 'insert':
             return '<p>Nota criada com sucesso!</p>';
